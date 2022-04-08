@@ -1,9 +1,16 @@
 $(document).ready(function () {
   try {
     // intialize config variables
-    let zipLevel = "";
-    let baseUrlSection = "/us-en/ontap-systems-switches/pdfs/sidebar/";
-    let zipFilename = "";
+    let zipLevel = "1";
+
+    let baseUrlSection = "/us-en/ontap-systems-switches/pdfs/";
+    const flavor = $("body").data("flavor");
+    if (flavor) {
+      baseUrlSection += flavor + "/";
+    }
+    baseUrlSection += "sidebar/";
+
+    let zipFilename = "ontap-systems-switches-pdfs.zip";
     let zipFileSize = 0;
     zipLevel = zipLevel !== ""?zipLevel:1;
     zipFilename = zipFilename !== ''?zipFilename:"ontap-systems-switches.zip";
