@@ -2139,11 +2139,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-01 15:09:35 +0000">04/01/2022</time>
+    <time datetime="2022-04-12 14:16:49 +0000">04/12/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-martyh">
+    <img  class="avatar avatar-small"
+          alt="netapp-martyh"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/66496079?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-yvonneo">
     <img  class="avatar avatar-small"
           alt="netapp-yvonneo"
@@ -2161,7 +2169,7 @@
 <h2 id="switches-supported-by-ontap">Switches supported by ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>From ONTAP 9.9.1, you can use Cisco Nexus 9336C-FX2 switches to combine storage and cluster functionality into a shared switch scenario. If you want to build ONTAP networks with more than two nodes, you need two supported network switches.</p>
+<p>From ONTAP 9.9.1, you can use Cisco Nexus 9336C-FX2 switches to combine storage and cluster functionality into a shared switch configuration. If you want to build ONTAP clusters with more than two nodes, you need two supported network switches.</p>
 </div>
 <div class="paragraph">
 <p>The following Cisco shared network switches are supported.</p>
@@ -2193,14 +2201,6 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X190200-CS-PI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N9K-9336C-FX2, CS, PSIN, 36PT10/25/40/100GQSFP28</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X190210-FE-PE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N9K-9336C, FTE, PTSX, 36PT10/25/40/100GQSFP28</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X190210-FE-PI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N9K-9336C, FTE, PSIN, 36PT10/25/40/100GQSFP28</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X190002</p></td>
@@ -2293,11 +2293,11 @@ You must download the applicable NetApp RCFs from the <a href="https://mysupport
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Rack the switches and controllers. See the<br>
+<p>Rack the switches, controllers and NS224 NVMe storage shelves. See the<br>
 <a href="https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-sw-9336c-install-cabinet/GUID-92287262-E7A6-4A62-B159-7F148097B33B.html">Installing a Cisco Nexus 9336C-FX2 cluster switch and pass-through panel in a NetApp cabinet</a> guide for instructions to install the switch in a NetApp cabinet.</p>
 </li>
 <li>
-<p>Power on the switches and controllers.</p>
+<p>Power on the switches, controllers and NS224 NVMe storage shelves.</p>
 </li>
 <li>
 <p><a id="step3"></a>Perform an initial configuration of the switches based on information provided in <a href="#required-configuration-information">Required configuration information</a>.</p>
@@ -2336,7 +2336,7 @@ If you have your own switches, refer to the <a href="http://www.cisco.com">Cisco
 <p>Host names and IP addresses for each of the storage system controllers and all applicable switches</p>
 </li>
 <li>
-<p>Most storage system controllers are managed through the e0M interface by connecting to the Ethernet service port (wrench icon). On AFF A800 and AFF A700 systems, the e0M interface uses a dedicated Ethernet port.</p>
+<p>Most storage system controllers are managed through the e0M interface by connecting to the Ethernet service port (wrench icon). On AFF A800 and AFF A700s systems, the e0M interface uses a dedicated Ethernet port.</p>
 </li>
 </ul>
 </div>
@@ -2572,13 +2572,14 @@ If you do not save the configuration at this stage, none of the changes will be 
 <h2 id="cisco-nexus-9336c-fx2-cabling-details">Cisco Nexus 9336C-FX2 cabling details</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use the following cabling images to complete the cabling between the controllers and the switches.</p>
+<p>You can use the following cabling images to complete the cabling between the controllers and the switches.<br>
+If you want to cable NS224 storage as switch-attached, follow the switch-attached diagram:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/9336c_image1.jpg" alt="Switch-attached"></span></p>
 </div>
 <div class="paragraph">
-<p>If you want to cable storage as direct-attached instead of using the shared switch storage ports, follow the direct-attached diagram:</p>
+<p>If you want to cable NS224 storage as direct-attached instead of using the shared switch storage ports, follow the direct-attached diagram:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/9336c_image2.jpg" alt="Direct-attached"></span></p>
