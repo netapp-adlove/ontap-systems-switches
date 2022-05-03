@@ -181,16 +181,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-initial.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-initial.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-initial.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-initial.html</loc>
       
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
       
     </url>
   
@@ -202,16 +202,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-rcf.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-rcf.html</loc>
       
-      <lastmod>2022-04-06T10:31:17+00:00</lastmod>
+      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-rcf.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-rcf.html</loc>
       
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      <lastmod>2022-04-06T10:31:17+00:00</lastmod>
       
     </url>
   
@@ -258,6 +258,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/</loc>
+      
+      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/</loc>
+      
+      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/</loc>
       
       <lastmod>2022-02-02T09:30:28+00:00</lastmod>
@@ -272,9 +286,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/</loc>
       
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      <lastmod>2022-02-17T00:38:13+00:00</lastmod>
       
     </url>
   
@@ -286,30 +300,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/</loc>
-      
-      <lastmod>2022-02-17T00:38:13+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/</loc>
-      
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/</loc>
       
       <lastmod>2021-10-07T13:58:06+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-overview.html</loc>
-      
-      <lastmod>2022-04-01T15:09:35+00:00</lastmod>
       
     </url>
   
@@ -321,9 +314,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-rcf.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-overview.html</loc>
       
-      <lastmod>2022-04-07T16:28:59+00:00</lastmod>
+      <lastmod>2022-04-01T15:09:35+00:00</lastmod>
       
     </url>
   
@@ -335,9 +328,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-software.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-rcf.html</loc>
       
-      <lastmod>2022-02-17T01:00:49+00:00</lastmod>
+      <lastmod>2022-04-07T16:28:59+00:00</lastmod>
       
     </url>
   
@@ -345,6 +338,13 @@
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-nxos-software.html</loc>
       
       <lastmod>2022-04-01T14:28:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-software.html</loc>
+      
+      <lastmod>2022-02-17T01:00:49+00:00</lastmod>
       
     </url>
   
@@ -377,6 +377,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-2n-switched.html</loc>
+      
+      <lastmod>2022-04-01T14:28:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched.html</loc>
       
       <lastmod>2021-12-08T21:59:54+00:00</lastmod>
@@ -391,9 +398,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-2n-switched.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-2n-switched-overview.html</loc>
       
-      <lastmod>2022-04-01T14:28:29+00:00</lastmod>
+      <lastmod>2021-10-07T13:58:06+00:00</lastmod>
       
     </url>
   
@@ -408,13 +415,6 @@
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/migrate-to-2n-switched-overview.html</loc>
       
       <lastmod>2022-01-28T09:56:10+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-2n-switched-overview.html</loc>
-      
-      <lastmod>2021-10-07T13:58:06+00:00</lastmod>
       
     </url>
   
@@ -645,7 +645,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches//search.html</loc>
       
-      <lastmod>2022-04-18T06:58:46+00:00</lastmod>
+      <lastmod>2022-05-03T10:22:54+00:00</lastmod>
       
     </url>
   
