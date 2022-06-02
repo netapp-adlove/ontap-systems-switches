@@ -97,6 +97,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html</loc>
+      
+      <lastmod>2022-03-04T09:24:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html</loc>
       
       <lastmod>2022-03-10T15:21:17+00:00</lastmod>
@@ -104,7 +111,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html</loc>
       
       <lastmod>2022-03-04T09:24:52+00:00</lastmod>
       
@@ -118,9 +125,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html</loc>
       
-      <lastmod>2022-03-04T09:24:52+00:00</lastmod>
+      <lastmod>2022-03-04T11:21:23+00:00</lastmod>
       
     </url>
   
@@ -128,13 +135,6 @@
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html</loc>
       
       <lastmod>2022-03-31T20:00:47+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html</loc>
-      
-      <lastmod>2022-03-04T11:21:23+00:00</lastmod>
       
     </url>
   
@@ -162,21 +162,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-edit-rcf.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-efos-software.html</loc>
       
-      <lastmod>2022-04-07T13:04:18+00:00</lastmod>
+      <lastmod>2022-05-19T18:06:59+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-health-monitor.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
@@ -190,7 +190,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-initial.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T17:26:05+00:00</lastmod>
       
     </url>
   
@@ -211,21 +211,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-install-rcf.html</loc>
       
-      <lastmod>2022-04-06T10:31:17+00:00</lastmod>
+      <lastmod>2022-06-02T15:19:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-licenses.html</loc>
       
-      <lastmod>2022-04-07T19:06:49+00:00</lastmod>
+      <lastmod>2022-05-18T14:53:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-log-collection.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-26T14:32:03+00:00</lastmod>
       
     </url>
   
@@ -246,21 +246,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-restrictions.html</loc>
       
-      <lastmod>2021-10-12T15:54:07+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-ssh.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/</loc>
-      
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
@@ -279,9 +272,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/</loc>
       
-      <lastmod>2021-10-12T15:54:07+00:00</lastmod>
+      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -296,6 +289,13 @@
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-netapp-cn1610/</loc>
       
       <lastmod>2022-02-10T18:36:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/</loc>
+      
+      <lastmod>2021-10-12T15:54:07+00:00</lastmod>
       
     </url>
   
@@ -330,7 +330,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/install-nxos-rcf.html</loc>
       
-      <lastmod>2022-04-07T16:28:59+00:00</lastmod>
+      <lastmod>2022-06-02T13:54:19+00:00</lastmod>
       
     </url>
   
@@ -365,14 +365,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-cn1610.html</loc>
       
-      <lastmod>2022-04-06T10:31:17+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-cn1610-overview.html</loc>
       
-      <lastmod>2021-10-12T15:54:07+00:00</lastmod>
+      <lastmod>2022-05-18T14:53:56+00:00</lastmod>
       
     </url>
   
@@ -384,16 +384,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/migrate-to-2n-switched.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-02-17T01:00:49+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/migrate-to-2n-switched.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched.html</loc>
       
-      <lastmod>2022-02-17T01:00:49+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
@@ -405,16 +405,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched-overview.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/migrate-to-2n-switched-overview.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-01-28T09:56:10+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/migrate-to-2n-switched-overview.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/migrate-to-2n-switched-overview.html</loc>
       
-      <lastmod>2022-01-28T09:56:10+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
@@ -463,7 +463,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/overview-bes53248.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
@@ -491,14 +491,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-configure-log-collection.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-configure-new-switch.html</loc>
-      
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-26T14:32:03+00:00</lastmod>
       
     </url>
   
@@ -510,37 +503,44 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-configure-new-switch.html</loc>
+      
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-edit-rcf.html</loc>
       
-      <lastmod>2021-11-18T18:18:53+00:00</lastmod>
+      <lastmod>2022-05-18T14:53:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-enable-ssh.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-install.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-install-cshm-file.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-install-efos.html</loc>
       
-      <lastmod>2022-04-07T13:04:18+00:00</lastmod>
+      <lastmod>2022-05-19T18:06:59+00:00</lastmod>
       
     </url>
   
@@ -554,7 +554,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-install-licenses.html</loc>
       
-      <lastmod>2022-04-07T19:06:49+00:00</lastmod>
+      <lastmod>2022-05-18T14:53:56+00:00</lastmod>
       
     </url>
   
@@ -566,51 +566,51 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-install-rcf.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/replace-install-rcf.html</loc>
       
-      <lastmod>2022-04-06T10:31:17+00:00</lastmod>
+      <lastmod>2022-06-02T13:54:19+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/replace-install-rcf.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-install-rcf.html</loc>
       
-      <lastmod>2022-04-07T16:28:59+00:00</lastmod>
+      <lastmod>2022-06-02T15:19:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-port-assignments.html</loc>
       
-      <lastmod>2021-10-12T15:54:07+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-prepare-controller.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-required-documentation.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-requirements.html</loc>
       
-      <lastmod>2021-10-19T21:59:34+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-restrictions.html</loc>
       
-      <lastmod>2021-10-12T15:54:07+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
@@ -624,28 +624,28 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-switch.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-upgrade.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/replace-verify.html</loc>
       
-      <lastmod>2021-12-08T21:59:54+00:00</lastmod>
+      <lastmod>2022-05-17T15:50:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches//search.html</loc>
       
-      <lastmod>2022-05-03T10:22:54+00:00</lastmod>
+      <lastmod>2022-06-02T17:33:23+00:00</lastmod>
       
     </url>
   
@@ -790,16 +790,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html</loc>
       
-      <lastmod>2022-03-31T20:00:47+00:00</lastmod>
+      <lastmod>2022-03-04T18:51:54+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html</loc>
       
-      <lastmod>2022-03-04T18:51:54+00:00</lastmod>
+      <lastmod>2022-03-31T20:00:47+00:00</lastmod>
       
     </url>
   
@@ -825,13 +825,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-how-to-replace-cn1610-cluster-switches-with-cisco-nexus-3232c-cluster-switches.html</loc>
-      
-      <lastmod>2022-03-31T20:00:47+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-how-to-replace-cn1610-cluster-switches-with-cisco-nexus-3232c-cluster-switches.html</loc>
       
       <lastmod>2022-03-04T18:42:47+00:00</lastmod>
@@ -839,9 +832,9 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html</loc>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-how-to-replace-cn1610-cluster-switches-with-cisco-nexus-3232c-cluster-switches.html</loc>
       
-      <lastmod>2022-03-10T15:21:17+00:00</lastmod>
+      <lastmod>2022-03-31T20:00:47+00:00</lastmod>
       
     </url>
   
@@ -849,6 +842,13 @@
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html</loc>
       
       <lastmod>2022-03-04T10:59:55+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html</loc>
+      
+      <lastmod>2022-03-10T15:21:17+00:00</lastmod>
       
     </url>
   
@@ -876,7 +876,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-netapp-cn1610/task-install-fastpath-software.html</loc>
       
-      <lastmod>2022-03-02T20:30:29+00:00</lastmod>
+      <lastmod>2022-06-02T15:19:51+00:00</lastmod>
       
     </url>
   
@@ -911,14 +911,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-install-the-reference-configuration-file-rcf-3132q-v.html</loc>
       
-      <lastmod>2022-03-03T17:26:08+00:00</lastmod>
+      <lastmod>2022-06-02T15:19:51+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/task-install-the-reference-configuration-file-rcf-3232c-cluster-switch.html</loc>
       
-      <lastmod>2022-04-07T13:55:52+00:00</lastmod>
+      <lastmod>2022-06-02T13:54:19+00:00</lastmod>
       
     </url>
   
