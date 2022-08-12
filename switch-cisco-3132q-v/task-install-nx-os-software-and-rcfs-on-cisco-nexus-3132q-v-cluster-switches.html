@@ -2046,9 +2046,13 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/ontap-systems-family/">AFF and FAS Systems</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
-          <a href="/us-en/ontap-systems-switches/">ONTAP&nbsp;Systems&nbsp;Switches</a>
+          <a href="/us-en/ontap-systems-switches/">Cluster&nbsp;and&nbsp;storage&nbsp;switches</a>
         </li>
 
       </ul>
@@ -2065,7 +2069,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 14:51:33 +0000">03/07/2022</time>
+    <time datetime="2022-08-11 13:46:23 +0000">08/11/2022</time>
     
   
 
@@ -2075,6 +2079,14 @@
           alt="netapp-aoife"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/92876203?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-yvonneo">
+    <img  class="avatar avatar-small"
+          alt="netapp-yvonneo"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/75329224?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2135,7 +2147,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<div class="title">About this task</div>
+<div class="title">Initial setup</div>
 <p>The examples in this procedure use two nodes. These nodes use two 10GbE cluster interconnect ports <code>e0a</code> and <code>e0b</code>.</p>
 </div>
 <div class="paragraph">
@@ -2190,7 +2202,7 @@ The procedure requires the use of both ONTAP commands and Cisco Nexus 3000 Serie
 <li>
 <p>If AutoSupport is enabled on this cluster, suppress automatic case creation by invoking an AutoSupport message:</p>
 <div class="paragraph">
-<p><code>system node autosupport invoke -node * -type all -message MAINT=x h</code></p>
+<p><code>system node autosupport invoke -node * -type all -message MAINT=xh</code></p>
 </div>
 <div class="paragraph">
 <p>where <em>x</em> is the duration of the maintenance window in hours.</p>
@@ -2234,9 +2246,7 @@ cluster1-02/cdp
             e0b    cs2                       Eth1/2            N3K-C3132Q-V
 cluster1-01/cdp
             e0a    cs1                       Eth1/1            N3K-C3132Q-V
-            e0b    cs2                       Eth1/1            N3K-C3132Q-V
-
-4 entries were displayed.</pre>
+            e0b    cs2                       Eth1/1            N3K-C3132Q-V</pre>
 </div>
 </div>
 </li>
@@ -2265,9 +2275,7 @@ Node: cluster1-01
 Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
 --------- ------------ ---------------- ---- ---- ----------- ------
 e0a       Cluster      Cluster          up   9000  auto/10000 healthy
-e0b       Cluster      Cluster          up   9000  auto/10000 healthy
-
-4 entries were displayed.</pre>
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy</pre>
 </div>
 </div>
 </li>
@@ -2287,9 +2295,7 @@ Cluster
             cluster1-01_clus1  up/up      169.254.209.69/16  cluster1-01   e0a     true
             cluster1-01_clus2  up/up      169.254.49.125/16  cluster1-01   e0b     true
             cluster1-02_clus1  up/up      169.254.47.194/16  cluster1-02   e0a     true
-            cluster1-02_clus2  up/up      169.254.19.183/16  cluster1-02   e0b     true
-
-4 entries were displayed.</pre>
+            cluster1-02_clus2  up/up      169.254.19.183/16  cluster1-02   e0b     true</pre>
 </div>
 </div>
 </li>
@@ -2299,11 +2305,11 @@ Cluster
 <li>
 <p>Ping the remote cluster LIFs:</p>
 <div class="paragraph">
-<p><code>cluster ping-cluster -node <em>node-name</em></code></p>
+<p><code>cluster ping-cluster -node local</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; <strong>cluster ping-cluster -node cluster1-02</strong>
+<pre>cluster1::*&gt; <strong>cluster ping-cluster -node local</strong>
 Host is cluster1-02
 Getting addresses from network interface table...
 Cluster cluster1-01_clus1 169.254.209.69 cluster1-01     e0a
@@ -2346,125 +2352,8 @@ Cluster
           cluster1-01_clus1   true
           cluster1-01_clus2   true
           cluster1-02_clus1   true
-          cluster1-02_clus2   true
-4 entries were displayed.</pre>
+          cluster1-02_clus2   true</pre>
 </div>
-</div>
-</li>
-<li>
-<p>For ONTAP 9.8 and later, enable the Ethernet switch health monitor log collection feature for collecting switch-related log files by using the commands:</p>
-<div class="paragraph">
-<p><code>system switch ethernet log setup-password</code></p>
-</div>
-<div class="paragraph">
-<p><code>system switch ethernet log enable-collection</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::*&gt; <strong>system switch ethernet log setup-password</strong>
-Enter the switch name: <strong>&lt;return&gt;</strong>
-The switch name entered is not recognized.
-Choose from the following list:
-cs1
-cs2
-
-cluster1::*&gt; <strong>system switch ethernet log setup-password</strong>
-
-Enter the switch name: <strong>cs1</strong>
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] <strong>y</strong>
-
-Enter the password: <strong>&lt;enter switch password&gt;</strong>
-Enter the password again: <strong>&lt;enter switch password&gt;</strong>
-
-cluster1::*&gt; <strong>system switch ethernet log setup-password</strong>
-
-Enter the switch name: <strong>cs2</strong>
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] <strong>y</strong>
-
-Enter the password: <strong>&lt;enter switch password&gt;</strong>
-Enter the password again: <strong>&lt;enter switch password&gt;</strong>
-
-cluster1::*&gt; <strong>system  switch ethernet log enable-collection</strong>
-
-Do you want to enable cluster log collection for all nodes in the cluster?
-{y|n}: [n] <strong>y</strong>
-
-Enabling cluster switch log collection.
-
-cluster1::*&gt;</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If any of these commands return an error, contact NetApp support.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>For ONTAP releases 9.5P16, 9.6P12, and 9.7P10 and later patch releases, enable the Ethernet switch health monitor log collection feature for collecting switch-related log files by using the commands:</p>
-<div class="paragraph">
-<p><code>system cluster-switch log setup-password</code></p>
-</div>
-<div class="paragraph">
-<p><code>system cluster-switch log enable-collection</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
-Enter the switch name: <strong>&lt;return&gt;</strong>
-The switch name entered is not recognized.
-Choose from the following list:
-cs1
-cs2
-
-cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
-
-Enter the switch name: <strong>cs1</strong>
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] <strong>y</strong>
-
-Enter the password: <strong>&lt;enter switch password&gt;</strong>
-Enter the password again: <strong>&lt;enter switch password&gt;</strong>
-
-cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
-
-Enter the switch name: cs2
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] <strong>y</strong>
-
-Enter the password: <strong>&lt;enter switch password&gt;</strong>
-Enter the password again: <strong>&lt;enter switch password&gt;</strong>
-
-cluster1::*&gt; <strong>system cluster-switch log enable-collection</strong>
-
-Do you want to enable cluster log collection for all nodes in the cluster?
-{y|n}: [n] <strong>y</strong>
-
-Enabling cluster switch log collection.
-
-cluster1::*&gt;</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If any of these commands return an error, contact NetApp support.
-</td>
-</tr>
-</table>
 </div>
 </li>
 </ol>

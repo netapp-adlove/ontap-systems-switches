@@ -2048,9 +2048,13 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/ontap-systems-family/">AFF and FAS Systems</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
-          <a href="/us-en/ontap-systems-switches/">ONTAP&nbsp;Systems&nbsp;Switches</a>
+          <a href="/us-en/ontap-systems-switches/">Cluster&nbsp;and&nbsp;storage&nbsp;switches</a>
         </li>
 
       </ul>
@@ -2067,7 +2071,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-09 14:00:17 +0000">06/09/2022</time>
+    <time datetime="2022-08-11 13:46:23 +0000">08/11/2022</time>
     
   
 
@@ -2147,7 +2151,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network device-discovery show
+<pre>cluster1::*&gt; <strong>network device-discovery show</strong>
 Node/       Local  Discovered
 Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
 ----------- ------ ------------------------- ----------------  ------------
@@ -2174,11 +2178,11 @@ cluster1::*&gt;</pre>
 <li>
 <p>Verify that all the cluster ports are up with a healthy status:</p>
 <div class="paragraph">
-<p><code>network port show –role cluster</code></p>
+<p><code>network port show -ipspace Cluster</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network port show -role cluster
+<pre>cluster1::*&gt; <strong>network port show -ipspace Cluster</strong>
 
 Node: cluster1-01
                                                                        Ignore
@@ -2220,11 +2224,11 @@ cluster1::*&gt;</pre>
 <li>
 <p>Verify that all the cluster interfaces (LIFs) are on the home port:</p>
 <div class="paragraph">
-<p><code>network interface show -role cluster</code></p>
+<p><code>network interface show -vserver Cluster</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network interface show -role cluster
+<pre>cluster1::*&gt; <strong>network interface show -vserver Cluster</strong>
             Logical            Status     Network           Current      Current Is
 Vserver     Interface          Admin/Oper Address/Mask      Node         Port    Home
 ----------- ------------------ ---------- ----------------- ------------ ------- ----
@@ -2237,7 +2241,6 @@ Cluster
             cluster1-03_clus2  up/up     169.254.1.1/23     cluster1-03  e0b     true
             cluster1-04_clus1  up/up     169.254.1.6/23     cluster1-04  e0a     true
             cluster1-04_clus2  up/up     169.254.1.7/23     cluster1-04  e0b     true
-8 entries were displayed.
 cluster1::*&gt;</pre>
 </div>
 </div>
@@ -2249,7 +2252,7 @@ cluster1::*&gt;</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; system cluster-switch show -is-monitoring-enabled-operational true
+<pre>cluster1::*&gt; <strong>system cluster-switch show -is-monitoring-enabled-operational true</strong>
 Switch                      Type               Address          Model
 --------------------------- ------------------ ---------------- ---------------
 cs1                         cluster-network    10.0.0.1         NX3132QV
@@ -2271,6 +2274,18 @@ cs2                         cluster-network    10.0.0.2         NX3132QV
 2 entries were displayed.</pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
+</td>
+<td class="content">
+For ONTAP 9.8 and later, use the command <code>system ethernet switch show -is-monitoring-enabled-operational true</code>.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
@@ -2279,27 +2294,30 @@ cs2                         cluster-network    10.0.0.2         NX3132QV
 <p>Disable auto-revert on the cluster LIFs.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network interface modify -vserver Cluster -lif \* -auto-revert false</pre>
+<pre>cluster1::*&gt; <strong>network interface modify -vserver Cluster -lif * -auto-revert false</strong></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Ensure that auto-revert is disabled after running this command.</p>
 </div>
 </li>
 <li>
 <p>On cluster switch cs2, shut down the ports connected to the cluster ports of the nodes.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cs2(config)# interface eth1/1/1-2,eth1/7-8
-cs2(config-if-range)# shutdown</pre>
+<pre>cs2(config)# <strong>interface eth1/1/1-2,eth1/7-8</strong>
+cs2(config-if-range)# <strong>shutdown</strong></pre>
 </div>
 </div>
 </li>
 <li>
 <p>Verify that the cluster ports have migrated to the ports hosted on cluster switch cs1. This might take a few seconds.</p>
 <div class="paragraph">
-<p><code>network interface show -role cluster</code></p>
+<p><code>network interface show -vserver Cluster</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network interface show -role cluster
+<pre>cluster1::*&gt; <strong>network interface show -vserver Cluster</strong>
             Logical           Status     Network            Current       Current Is
 Vserver     Interface         Admin/Oper Address/Mask       Node          Port    Home
 ----------- ----------------- ---------- ------------------ ------------- ------- ----
@@ -2312,7 +2330,6 @@ Cluster
             cluster1-03_clus2 up/up      169.254.1.1/23     cluster1-03   e0a     false
             cluster1-04_clus1 up/up      169.254.1.6/23     cluster1-04   e0a     true
             cluster1-04_clus2 up/up      169.254.1.7/23     cluster1-04   e0a     false
-8 entries were displayed.
 cluster1::*&gt;</pre>
 </div>
 </div>
@@ -2324,14 +2341,13 @@ cluster1::*&gt;</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; cluster show
+<pre>cluster1::*&gt; <strong>cluster show</strong>
 Node                 Health  Eligibility   Epsilon
 -------------------- ------- ------------  -------
 cluster1-01          true    true          false
 cluster1-02          true    true          false
 cluster1-03          true    true          true
 cluster1-04          true    true          false
-4 entries were displayed.
 cluster1::*&gt;</pre>
 </div>
 </div>
@@ -2362,11 +2378,11 @@ This step requires a console connection to the switch.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cs2# write erase
+<pre>cs2# <strong>write erase</strong>
 Warning: This command will erase the startup-configuration.
-Do you wish to proceed anyway? (y/n)  [n] y
-cs2# reload
-This command will reboot the system. (y/n)?  [n] y
+Do you wish to proceed anyway? (y/n)  [n] <strong>y</strong>
+cs2# <strong>reload</strong>
+This command will reboot the system. (y/n)?  [n] <strong>y</strong>
 cs2#</pre>
 </div>
 </div>
@@ -2384,8 +2400,8 @@ cs2#</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cs2# copy tftp: bootflash: vrf management
-Enter source filename: Nexus_3132QV_RCF_v1.6-Cluster-HA-Breakout.txt
+<pre>cs2# <strong>copy tftp: bootflash: vrf management</strong>
+Enter source filename: <strong>Nexus_3132QV_RCF_v1.6-Cluster-HA-Breakout.txt</strong>
 Enter hostname for the tftp server: 172.22.201.50
 Trying to connect to tftp server......Connection to Server Established.
 TFTP get operation was successful
@@ -2403,7 +2419,7 @@ Copy complete, now saving to disk (please wait)...</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cs2# copy Nexus_3132QV_RCF_v1.6-Cluster-HA-Breakout.txt running-config echo-commands</pre>
+<pre>cs2# <strong>copy Nexus_3132QV_RCF_v1.6-Cluster-HA-Breakout.txt running-config echo-commands</strong></pre>
 </div>
 </div>
 </li>
@@ -2412,7 +2428,6 @@ Copy complete, now saving to disk (please wait)...</pre>
 <div class="listingblock">
 <div class="content">
 <pre>cs2# show banner motd
-
 
 ******************************************************************************
 * NetApp Reference Configuration File (RCF)
@@ -2485,8 +2500,8 @@ The output varies according to your site configuration. Check the port settings 
 <p>Reboot switch cs2. You can ignore the "cluster ports down" events reported on the nodes while the switch reboots.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cs2# reload
-This command will reboot the system. (y/n)?  [n] y</pre>
+<pre>cs2# <strong>reload</strong>
+This command will reboot the system. (y/n)?  [n] <strong>y</strong></pre>
 </div>
 </div>
 </li>
@@ -2504,13 +2519,13 @@ cs2# copy running-config startup-config [#######################################
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Verify that e0d ports are up and healthy across all nodes in the cluster:</p>
+<p>Verify that cluster ports are up and healthy across all nodes in the cluster:</p>
 <div class="paragraph">
-<p><code>network port show -role cluster</code></p>
+<p><code>network port show -ipspace Cluster</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network port show -role cluster
+<pre>cluster1::*&gt; <strong>network port show -ipspace Cluster</strong>
 
 Node: cluster1-01
                                                                        Ignore
@@ -2542,16 +2557,15 @@ Node: cluster1-04
 Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
 --------- ------------ ---------------- ---- ---- ----------- -------- ------
 e0a       Cluster      Cluster          up   9000  auto/100000 healthy false
-e0d       Cluster      Cluster          up   9000  auto/100000 healthy false
-8 entries were displayed.</pre>
+e0d       Cluster      Cluster          up   9000  auto/100000 healthy false</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Verify the switch health from the cluster (this might not show switch cs2, since LIFs are not homed on e0d).</p>
+<p>Verify the switch health from the cluster.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network device-discovery show -protocol cdp
+<pre>cluster1::*&gt; <strong>network device-discovery show -protocol cdp</strong>
 Node/       Local  Discovered
 Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
 ----------- ------ ------------------------- ----------------- --------
@@ -2568,7 +2582,7 @@ cluster1-04/cdp
             e0a    cs1                       Ethernet1/1/2     N3K-C3132Q-V
             e0b    cs2                       Ethernet1/1/2     N3K-C3132Q-V
 
-cluster1::*&gt; system cluster-switch show -is-monitoring-enabled-operational true
+cluster1::*&gt; <strong>system cluster-switch show -is-monitoring-enabled-operational true</strong>
 Switch                      Type               Address          Model
 --------------------------- ------------------ ---------------- -----
 cs1                         cluster-network    10.233.205.90    N3K-C3132Q-V
@@ -2590,8 +2604,17 @@ cs2                         cluster-network    10.233.205.91    N3K-C3132Q-V
 2 entries were displayed.</pre>
 </div>
 </div>
-</li>
-</ol>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
+</td>
+<td class="content">
+For ONTAP 9.8 and later, use the command <code>system ethernet switch show -is-monitoring-enabled-operational true</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2615,6 +2638,9 @@ cs2                         cluster-network    10.233.205.91    N3K-C3132Q-V
 </table>
 </div>
 </li>
+</ol>
+</div>
+</li>
 <li>
 <p>On cluster switch cs1, shut down the ports connected to the cluster ports of the nodes.</p>
 <div class="paragraph">
@@ -2622,19 +2648,19 @@ cs2                         cluster-network    10.233.205.91    N3K-C3132Q-V
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cs1(config)# interface eth1/1/1-2,eth1/7-8
-cs1(config-if-range)# shutdown</pre>
+<pre>cs1(config)# <strong>interface eth1/1/1-2,eth1/7-8</strong>
+cs1(config-if-range)# <strong>shutdown</strong></pre>
 </div>
 </div>
 </li>
 <li>
 <p>Verify that the cluster LIFs have migrated to the ports hosted on switch cs2. This might take a few seconds.</p>
 <div class="paragraph">
-<p><code>network interface show -role cluster</code></p>
+<p><code>network interface show -vserver Cluster</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network interface show -role cluster
+<pre>cluster1::*&gt; <strong>network interface show -vserver Cluster</strong>
             Logical            Status     Network            Current             Current Is
 Vserver     Interface          Admin/Oper Address/Mask       Node                Port    Home
 ----------- ------------------ ---------- ------------------ ------------------- ------- ----
@@ -2647,7 +2673,6 @@ Cluster
             cluster1-03_clus2  up/up      169.254.1.1/23     cluster1-03         e0b     true
             cluster1-04_clus1  up/up      169.254.1.6/23     cluster1-04         e0b     false
             cluster1-04_clus2  up/up      169.254.1.7/23     cluster1-04         e0b     true
-8 entries were displayed.
 cluster1::*&gt;</pre>
 </div>
 </div>
@@ -2659,7 +2684,7 @@ cluster1::*&gt;</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; cluster show
+<pre>cluster1::*&gt; <strong>cluster show</strong>
 Node                 Health   Eligibility   Epsilon
 -------------------- -------- ------------- -------
 cluster1-01          true     true          false
@@ -2672,22 +2697,22 @@ cluster1::*&gt;</pre>
 </div>
 </li>
 <li>
-<p>Repeat Steps 7 to 14 on switch cs1.</p>
+<p>Repeat Steps 7 to 16 on switch cs1.</p>
 </li>
 <li>
 <p>Enable auto-revert on the cluster LIFs.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network interface modify -vserver Cluster -lif \* -auto-revert True</pre>
+<pre>cluster1::*&gt; network interface modify -vserver Cluster -lif * -auto-revert True</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Reboot switch cs1.You do this to trigger the cluster LIFs to revert to their home ports. You can ignore the "cluster ports down" events reported on the nodes while the switch reboots.</p>
+<p>Reboot switch cs1. You do this to trigger the cluster LIFs to revert to their home ports. You can ignore the "cluster ports down" events reported on the nodes while the switch reboots.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cs1# reload
-This command will reboot the system. (y/n)?  [n] y</pre>
+<pre>cs1# <strong>reload</strong>
+This command will reboot the system. (y/n)?  [n] <strong>y</strong></pre>
 </div>
 </div>
 </li>
@@ -2695,7 +2720,7 @@ This command will reboot the system. (y/n)?  [n] y</pre>
 <p>Verify that the switch ports connected to the cluster ports are up.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cs1# show interface brief \| grep up
+<pre>cs1# <strong>show interface brief | grep up</strong>
 .
 .
 Eth1/1/1      1       eth  access up      none                    10G(D) --
@@ -2714,7 +2739,7 @@ Eth1/8        1       eth  trunk  up      none                   100G(D) --
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cs1# show port-channel summary
+<pre>cs1# <strong>show port-channel summary</strong>
 Flags:  D - Down        P - Up in port-channel (members)
         I - Individual  H - Hot-standby (LACP only)
         s - Suspended   r - Module-removed
@@ -2735,11 +2760,11 @@ cs1#</pre>
 <li>
 <p>Verify that the cluster LIFs have reverted to their home port:</p>
 <div class="paragraph">
-<p><code>network interface show -role cluster</code></p>
+<p><code>network interface show -vserver Cluster</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network interface show -role cluster
+<pre>cluster1::*&gt; <strong>network interface show -vserver Cluster</strong>
             Logical            Status     Network            Current             Current Is
 Vserver     Interface          Admin/Oper Address/Mask       Node                Port    Home
 ----------- ------------------ ---------- ------------------ ------------------- ------- ----
@@ -2752,7 +2777,6 @@ Cluster
             cluster1-03_clus2  up/up      169.254.1.1/23     cluster1-03         e0b     true
             cluster1-04_clus1  up/up      169.254.1.6/23     cluster1-04         e0b     true
             cluster1-04_clus2  up/up      169.254.1.7/23     cluster1-04         e0b     true
-8 entries were displayed.
 cluster1::*&gt;</pre>
 </div>
 </div>
@@ -2764,14 +2788,13 @@ cluster1::*&gt;</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; cluster show
+<pre>cluster1::*&gt; <strong>cluster show</strong>
 Node                 Health  Eligibility   Epsilon
 -------------------- ------- ------------- -------
 cluster1-01          true    true          false
 cluster1-02          true    true          false
 cluster1-03          true    true          true
 cluster1-04          true    true          false
-4 entries were displayed.
 cluster1::*&gt;</pre>
 </div>
 </div>
@@ -2783,7 +2806,7 @@ cluster1::*&gt;</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; cluster ping-cluster -node local
+<pre>cluster1::*&gt; <strong>cluster ping-cluster -node local</strong>
 Host is cluster1-03
 Getting addresses from network interface table...
 Cluster cluster1-03_clus1 169.254.1.3 cluster1-03 e0a
@@ -2820,6 +2843,140 @@ RPC status:
 6 paths up, 0 paths down (tcp check)
 6 paths up, 0 paths down (udp check)</pre>
 </div>
+</div>
+</li>
+<li>
+<p>For ONTAP 9.8 and later, enable the Ethernet switch health monitor log collection feature for collecting switch-related log files by using the commands:</p>
+<div class="paragraph">
+<p><code>system switch ethernet log setup-password</code> and</p>
+</div>
+<div class="paragraph">
+<p><code>system switch ethernet log enable-collection</code></p>
+</div>
+<div class="paragraph">
+<p>Enter: <code>system switch ethernet log setup-password</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster1::*&gt; <strong>system switch ethernet log setup-password</strong>
+Enter the switch name: <strong>&lt;return&gt;</strong>
+The switch name entered is not recognized.
+Choose from the following list:
+<strong>cs1</strong>
+<strong>cs2</strong>
+
+cluster1::*&gt; <strong>system switch ethernet log setup-password</strong>
+
+Enter the switch name: <strong>cs1</strong>
+RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
+Do you want to continue? {y|n}::[n] <strong>y</strong>
+
+Enter the password: <strong>&lt;enter switch password&gt;</strong>
+Enter the password again: <strong>&lt;enter switch password&gt;</strong>
+
+cluster1::*&gt; <strong>system switch ethernet log setup-password</strong>
+
+Enter the switch name: <strong>cs2</strong>
+RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
+Do you want to continue? {y|n}:: [n] <strong>y</strong>
+
+Enter the password: <strong>&lt;enter switch password&gt;</strong>
+Enter the password again: <strong>&lt;enter switch password&gt;</strong></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Followed by: <code>system switch ethernet log enable-collection</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster1::*&gt; <strong>system  switch ethernet log enable-collection</strong>
+
+Do you want to enable cluster log collection for all nodes in the cluster?
+{y|n}: [n] <strong>y</strong>
+
+Enabling cluster switch log collection.
+
+cluster1::*&gt;</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If any of these commands return an error, contact NetApp support.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>For ONTAP releases 9.5P16, 9.6P12, and 9.7P10 and later patch releases, enable the Ethernet switch health monitor log collection feature for collecting switch-related log files by using the commands:</p>
+<div class="paragraph">
+<p><code>system cluster-switch log setup-password</code> and</p>
+</div>
+<div class="paragraph">
+<p><code>system cluster-switch log enable-collection</code></p>
+</div>
+<div class="paragraph">
+<p>Enter: <code>system cluster-switch log setup-password</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
+Enter the switch name: <strong>&lt;return&gt;</strong>
+The switch name entered is not recognized.
+Choose from the following list:
+<strong>cs1</strong>
+<strong>cs2</strong>
+
+cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
+
+Enter the switch name: <strong>cs1</strong>
+RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
+Do you want to continue? {y|n}::[n] <strong>y</strong>
+
+Enter the password: <strong>&lt;enter switch password&gt;</strong>
+Enter the password again: <strong>&lt;enter switch password&gt;</strong>
+
+cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
+
+Enter the switch name: <strong>cs2</strong>
+RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
+Do you want to continue? {y|n}:: [n] <strong>y</strong>
+
+Enter the password: <strong>&lt;enter switch password&gt;</strong>
+Enter the password again: <strong>&lt;enter switch password&gt;</strong></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Followed by: <code>system cluster-switch log enable-collection</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster1::*&gt; <strong>system cluster-switch log enable-collection</strong>
+
+Do you want to enable cluster log collection for all nodes in the cluster?
+{y|n}: [n] <strong>y</strong>
+
+Enabling cluster switch log collection.
+
+cluster1::*&gt;</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If any of these commands return an error, contact NetApp support.
+</td>
+</tr>
+</table>
 </div>
 </li>
 </ol>
