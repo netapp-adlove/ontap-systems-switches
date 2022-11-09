@@ -1585,13 +1585,13 @@
 
 
 
-
-
         </li>
       </ul>
     
 
   
+
+
 
 
         </li>
@@ -2941,11 +2941,11 @@
         Install the NX-OS software
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Install the Reference Configuration File (RCF)"
+      data-pdf-filename="Install the Reference Configuration File"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-rcf.html">
-        Install the Reference Configuration File (RCF)
+    ><a class="na-navbar-padding" href="/us-en/ontap-systems-switches/switch-cisco-92300/install-the-rcf-file.html">
+        Install the Reference Configuration File
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Install NX-OS software and RCF on Cisco Nexus 92300YC cluster switches"
@@ -2971,11 +2971,11 @@
         Install the NX-OS software
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Install the Reference Configuration File (RCF)"
+      data-pdf-filename="Install the Reference Configuration File"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap-systems-switches/switch-cisco-92300/install-nxos-rcf.html">
-        Install the Reference Configuration File (RCF)
+    ><a class="na-navbar-padding" href="/us-en/ontap-systems-switches/switch-cisco-92300/install-the-rcf-file.html">
+        Install the Reference Configuration File
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Migrate to a two-node switched cluster with Cisco Nexus 92300YC switches"
@@ -3022,14 +3022,14 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-92300yc.html">
         How to migrate from a Cisco switch to a Cisco Nexus 92300YC switch
-      </a></li><li 
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Replace a Cisco Nexus 92300YC switch"
-      data-li-level="3#" 
+      data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap-systems-switches/switch-cisco-92300/replace-92300yc.html">
         Replace a Cisco Nexus 92300YC switch
-      </a></li></ul></li></ul></li><li 
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="NVIDIA SN2100 Switches"
       data-li-level="1" 
@@ -3255,7 +3255,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 10:31:17 +0000">04/06/2022</time>
+    <time datetime="2022-11-08 20:28:18 +0000">11/08/2022</time>
     
   
 
@@ -3300,7 +3300,7 @@
 <p>If you need to change the boot configuration to reflect the current boot images, you must do so before reapplying the RCF so that the correct version is instantiated on future reboots.</p>
 </li>
 <li>
-<p>You must have consulted the switch compatibility table on the <a href="https://support.netapp.com/NOW/download/software/cm_switches/" target="_blank" rel="noopener">Cisco Ethernet switch</a> page for the supported ONTAP, NX-OS, and RCF versions.</p>
+<p>You must have consulted the switch compatibility table on the <a href="https://mysupport.netapp.com/site/info/cisco-ethernet-switch" target="_blank" rel="noopener">Cisco Ethernet switch</a> page for the supported ONTAP, NX-OS, and RCF versions.</p>
 </li>
 <li>
 <p>There can be command dependencies between the command syntax in the RCF and that found in versions of NX-OS.</p>
@@ -3378,7 +3378,7 @@ The procedure requires the use of both ONTAP commands and Cisco Nexus 9000 Serie
 <li>
 <p>If AutoSupport is enabled on this cluster, suppress automatic case creation by invoking an AutoSupport message:</p>
 <div class="paragraph">
-<p><code>system node autosupport invoke -node * -type all -message MAINT=x h</code></p>
+<p><code>system node autosupport invoke -node * -type all -message MAINT=xh</code></p>
 </div>
 <div class="paragraph">
 <p>where <em>x</em> is the duration of the maintenance window in hours.</p>
@@ -3400,7 +3400,7 @@ The AutoSupport message notifies technical support of this maintenance task so t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1:&gt; system node autosupport invoke -node * -type all -message MAINT=2h</pre>
+<pre>cluster1:&gt; **system node autosupport invoke -node * -type all -message MAINT=2h**</pre>
 </div>
 </div>
 </li>
@@ -3429,7 +3429,7 @@ node1      /cdp
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Display the network port attributes:<code>network port show –ipspace Cluster</code></p>
+<p>Display the network port attributes:  <code>network port show –ipspace Cluster</code></p>
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::*&gt; <strong>network port show -ipspace Cluster</strong>
@@ -3528,61 +3528,6 @@ Cluster
 
 4 entries were displayed.</pre>
 </div>
-</div>
-</li>
-<li>
-<p>For ONTAP 9.4 and later, enable the cluster switch health monitor log collection feature for collecting switch-related log files using the commands:</p>
-<div class="paragraph">
-<p><code>system cluster-switch log setup-password</code> and <code>system cluster-switch log enable-collection</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
-Enter the switch name: &lt;return&gt;
-The switch name entered is not recognized.
-Choose from the following list:
-cs1
-cs2
-
-cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
-
-Enter the switch name: <strong>cs1</strong>
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] <strong>y</strong>
-
-Enter the password: &lt;enter switch password&gt;
-Enter the password again: &lt;enter switch password&gt;
-
-cluster1::*&gt; <strong>system cluster-switch log setup-password</strong>
-
-Enter the switch name: <strong>cs2</strong>
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] <strong>y</strong>
-
-Enter the password: &lt;enter switch password&gt;
-Enter the password again: &lt;enter switch password&gt;
-
-cluster1::*&gt; <strong>system cluster-switch log enable-collection</strong>
-
-Do you want to enable cluster log collection for all nodes in the cluster?
-{y|n}: [n] <strong>y</strong>
-
-Enabling cluster switch log collection.
-
-cluster1::*&gt;</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap-systems-switches/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If any of these commands return an error, contact NetApp support.
-</td>
-</tr>
-</table>
 </div>
 </li>
 </ol>

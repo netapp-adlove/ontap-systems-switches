@@ -190,7 +190,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-initial.html</loc>
       
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      <lastmod>2022-11-08T20:28:18+00:00</lastmod>
       
     </url>
   
@@ -239,7 +239,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-overview.html</loc>
       
-      <lastmod>2022-03-31T21:09:56+00:00</lastmod>
+      <lastmod>2022-11-08T20:28:18+00:00</lastmod>
       
     </url>
   
@@ -351,7 +351,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-nxos-overview.html</loc>
       
-      <lastmod>2022-04-06T10:31:17+00:00</lastmod>
+      <lastmod>2022-11-08T20:28:18+00:00</lastmod>
       
     </url>
   
@@ -380,6 +380,13 @@
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-nxos-software.html</loc>
       
       <lastmod>2022-04-01T14:28:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-the-rcf-file.html</loc>
+      
+      <lastmod>2022-11-08T21:04:44+00:00</lastmod>
       
     </url>
   
@@ -505,7 +512,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-92300yc-overview.html</loc>
       
-      <lastmod>2022-04-01T14:28:29+00:00</lastmod>
+      <lastmod>2022-11-08T20:28:18+00:00</lastmod>
       
     </url>
   
@@ -554,7 +561,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/replace-92300yc.html</loc>
       
-      <lastmod>2022-04-01T14:28:29+00:00</lastmod>
+      <lastmod>2022-11-08T20:28:18+00:00</lastmod>
       
     </url>
   
@@ -708,7 +715,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/replace_sn2100_switch_cluster.html</loc>
       
-      <lastmod>2022-08-09T19:37:33+00:00</lastmod>
+      <lastmod>2022-11-08T20:49:34+00:00</lastmod>
       
     </url>
   
@@ -743,7 +750,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap-systems-switches//search.html</loc>
       
-      <lastmod>2022-11-03T16:18:02+00:00</lastmod>
+      <lastmod>2022-11-09T07:18:19+00:00</lastmod>
       
     </url>
   
