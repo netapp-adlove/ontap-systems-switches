@@ -20,7 +20,7 @@ This example verifies that the switch can reach the server at IP address 172.19.
 +
 [subs=+quotes]
 ----
-cs2# *ping 172.19.2.1*
+cs2# *ping 172.19.2.1 vrf management*
 Pinging 172.19.2.1 with 0 bytes of data:
 
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
